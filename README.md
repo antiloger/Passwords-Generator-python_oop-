@@ -4,4 +4,4 @@ Once the user has provided the required parameters, the script generates a rando
 
 The password generator is built using the Python programming language and makes use of various Python libraries such as random and string. The script is designed to be easy to use and can be run on any computer with Python installed.
 
-Overall, the password generator is a useful tool for anyone who needs to generate strong and secure passwords on a regular basis.
+
