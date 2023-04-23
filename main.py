@@ -1,4 +1,3 @@
-import argparse
 import random
 
 char = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
@@ -54,22 +53,37 @@ class Psw_kick():
        return org_psw
     
 
-        
+
+def checker(che):
+    if che == 'Y':
+        che = True
+    elif che == 'N':
+        che == False
+    else:
+        print("re enter :not valid")
 
 def main():
-    # set up command line argument parser
-    parser = argparse.ArgumentParser(description="Generate a password with specified parameters.")
-    parser.add_argument('length', type=int, help="length of password")
-    parser.add_argument('-s', '--simple', action='store_true', help="include simple characters")
-    parser.add_argument('-c', '--capital', action='store_true', help="include capital letters")
-    parser.add_argument('-n', '--number', action='store_true', help="include numbers")
-    parser.add_argument('-b', '--symbol', action='store_true', help="include symbols")
-    args = parser.parse_args()
+    p_lenth = input("password lenth:")
+    p_lenth = int(p_lenth)
 
-    # generate password with specified parameters
-    psw = Psw_kick(args.length, args.simple, args.capital, args.number, args.symbol)
+    p_smp = input("do you need to add simple letter? (Y=yes/N=no)")
+    checker(p_smp)
+
+    p_cap = input("do you need to add capitel letter? (Y=yes/N=no)")
+    checker(p_cap)
+
+    p_num = input("do you need to add numbers? (Y=yes/N=no)")
+    checker(p_num)
+
+    p_sym = input("do you need to add symbols? (Y=yes/N=no)")
+    checker(p_sym)
+
+    psw = Psw_kick(p_lenth, p_smp, p_cap, p_num, p_sym)
+
     log = psw.shuffle_psw()
-    print(psw.__str__(log))
+    print(log)
+
+
 
 if __name__ == "__main__":
     main()
